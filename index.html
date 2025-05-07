@@ -4,6 +4,20 @@
     <title>AdMob Verification</title>
 </head>
 <body>
-    <!-- يمكنك تركه فارغًا -->
+    <h1>AdMob Verification File</h1>
+    <!-- عرض محتوى ads.txt هنا -->
+    <pre id="content"></pre>
+
+    <script>
+        // جلب محتوى ملف ads.txt وعرضه
+        fetch('ads.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').textContent = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
 </body>
 </html>
